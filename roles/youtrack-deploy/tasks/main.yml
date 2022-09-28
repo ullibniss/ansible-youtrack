@@ -1,0 +1,38 @@
+---
+- name: Create deployment directories
+  ansible.builtin.file:
+    path: "{{ path_to_dir }}"
+    state: directory
+    mode: 0755
+    owner: "13001"
+    group: "13001"
+  loop:
+  - "{{ youtrack_deploy_dir }}"
+  - "{{ youtrack_data_dir }}"
+  - "{{ youtrack_conf_dir }}"
+  - "{{ youtrack_logs_dir }}"
+  loop_control:
+    loop_var: path_to_dir
+  become: true
+
+- name: Render docker-compose.yml
+  ansible.builtin.template:
+    src: "docker-compose.yml"
+    dest: "{{ youtrack_deploy_dir }}/docker-compose.yml"
+  become: true
+
+- name: "Create {{ youtrack_service_name }} service at /etc/systemd/system/{{ youtrack_service_name }}"
+  become: true
+  template:
+    src: "{{ youtrack_service_template }}"
+    dest: "/etc/systemd/system/{{ youtrack_service_name }}"
+    mode: 0644
+    owner: "root"
+    group: "root"
+
+- name: "Enable {{ youtrack_service_name }} service"
+  systemd:
+    name: "{{ youtrack_service_name }}"
+    enabled: "true"
+    daemon_reload: yes
+  become: true

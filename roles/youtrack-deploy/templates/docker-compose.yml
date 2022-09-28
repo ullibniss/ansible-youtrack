@@ -1,0 +1,13 @@
+version: "3.0"
+
+
+services:
+  youtrack:
+    container_name: youtrack-server-instance
+    image: jetbrains/youtrack:{{ youtrack_image_tag }}
+    volumes:
+      - "{{ youtrack_data_dir }}:/opt/youtrack/data"
+      - "{{ youtrack_conf_dir }}:/opt/youtrack/conf"
+      - "{{ youtrack_logs_dir }}:/opt/youtrack/logs"
+    ports:
+      - "{{ youtrack_port }}:8080"

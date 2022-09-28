@@ -1,0 +1,13 @@
+[Unit]
+Description=YouTrack Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+WorkingDirectory = {{ youtrack_deploy_dir }}
+ExecStart=/usr/bin/docker-compose up -d
+
+[Install]
+WantedBy=default.target
