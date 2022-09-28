@@ -1,0 +1,5 @@
+---
+- name: Deploy youtrack service
+  hosts: [example]
+  roles:
+    - role: youtrack-deploy
