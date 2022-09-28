@@ -2,6 +2,7 @@ youtrack_deploy_dir: "{{ deploy_dir }}/youtrack"
 youtrack_data_dir: "{{ youtrack_deploy_dir }}/data"
 youtrack_conf_dir: "{{ youtrack_deploy_dir }}/conf"
 youtrack_logs_dir: "{{ youtrack_deploy_dir }}/logs"
+youtrack_backups_dir: "{{ youtrack_deploy_dir }}/backups"
 
 youtrack_port: 80
 youtrack_image_tag: "2022.2.55618"

@@ -9,5 +9,6 @@ services:
       - "{{ youtrack_data_dir }}:/opt/youtrack/data"
       - "{{ youtrack_conf_dir }}:/opt/youtrack/conf"
       - "{{ youtrack_logs_dir }}:/opt/youtrack/logs"
+      - "{{ youtrack_backups_dir }}:/opt/youtrack/backups"
     ports:
       - "{{ youtrack_port }}:8080"

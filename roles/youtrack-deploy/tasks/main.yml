@@ -11,6 +11,7 @@
   - "{{ youtrack_data_dir }}"
   - "{{ youtrack_conf_dir }}"
   - "{{ youtrack_logs_dir }}"
+  - "{{ youtrack_backups_dir }}"
   loop_control:
     loop_var: path_to_dir
   become: true
