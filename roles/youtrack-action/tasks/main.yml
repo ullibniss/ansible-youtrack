@@ -1,0 +1,23 @@
+---
+- name: Start youtrack service
+  ansible.builtin.systemd:
+    name: "{{ youtrack_service_name }}"
+    state: "{{ youtrack_action }}"
+  become: true
+
+- name: wait started
+  ansible.builtin.wait_for:
+    timeout: "5"
+  delegate_to: localhost
+  when: "youtrack_action == 'started' or youtrack_action == 'restarted'"
+
+- name: "CHECK: systemctl -l status {{ youtrack_service_name }}"
+  ansible.builtin.command: 
+    argv:
+      - systemctl 
+      - -l 
+      - status 
+      - "{{ youtrack_service_name }}"
+  become: true
+  when: "youtrack_action == 'started' or youtrack_action == 'restarted'"
+  ignore_errors: true
