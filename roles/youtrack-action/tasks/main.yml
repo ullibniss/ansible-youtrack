@@ -1,5 +1,5 @@
 ---
-- name: Start youtrack service
+- name: "Youtrack service {{ youtrack_action }}"
   ansible.builtin.systemd:
     name: "{{ youtrack_service_name }}"
     state: "{{ youtrack_action }}"
