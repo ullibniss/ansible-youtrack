@@ -1,0 +1,7 @@
+---
+- name: Restart youtrack service
+  hosts: [example]
+  roles:
+    - role: youtrack-action
+      vars:
+        youtrack_action: restarted

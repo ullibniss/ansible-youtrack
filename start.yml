@@ -1,0 +1,7 @@
+---
+- name: Start youtrack service
+  hosts: [example]
+  roles:
+    - role: youtrack-action
+      vars:
+        youtrack_action: started
