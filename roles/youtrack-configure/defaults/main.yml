@@ -1,0 +1,53 @@
+##
+# General Parameters https://www.jetbrains.com/help/youtrack/server/YouTrack-Java-Start-Parameters.html#general-parameters
+##
+
+youtrack_support_email: youtrack-feedback@jetbrains.com
+youtrack_mail_limit: 0
+youtrack_event_merge_timeout: 60000
+youtrack_disable_checks_for_update: false
+youtrack_min_prefix_query_length: 3
+
+youtrack_default_page: /dashboard
+youtrack_web_hooks_base_url: ""
+youtrack_http_request_header_buffer_size:
+youtrack_http_response_header_buffer_size:
+
+youtrack_licence_name: ""
+youtrack_licence_key: ""
+
+youtrack_dumb_mode: false
+
+##
+# Environmental Parameters https://www.jetbrains.com/help/youtrack/server/YouTrack-Java-Start-Parameters.html#environmental-parameters
+##
+
+youtrack_base_url:
+youtrack_secure_mode: disabled
+youtrack_listen_address: 0.0.0.0
+youtrack_listen_port: 80
+youtrack_tls_redirect_from_http: false
+youtrack_tls_redirect_from_http_listen_port: 
+
+youtrack_tls_server_cert_folder: 
+youtrack_tls_server_cert_keystore_file:
+youtrack_tls_server_cert_keystore_password:
+youtrack_tls_server_cert_keystore_key_alias:
+youtrack_tls_server_cert_keystore_key_password:
+youtrack_tls_server_cert_key_file:
+youtrack_tls_server_cert_file:
+youtrack_tls_server_cert_chain_file:
+youtrack_tls_server_cert_private_key_passphrase:
+
+youtrack_data_dir:
+youtrack_temp_dir:
+youtrack_logs_dir:
+youtrack_backups_dir:
+youtrack_hub_url:
+youtrack_statistics_upload: false
+
+##
+# Authentication Throttling Parameters  https://www.jetbrains.com/help/youtrack/server/YouTrack-Java-Start-Parameters.html#throttling-parameters
+##
+
+youtrack_auth_login_throttling_enabled: false
